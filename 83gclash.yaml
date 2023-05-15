@@ -1,5 +1,6 @@
 ####################################
 # 83寄，想寄就寄
+#v1.1
 ####################################
 mixed-port: 7890
 allow-lan: true
@@ -17,59 +18,69 @@ dns:
     - tls://dns.google:853
 
 proxies:
-  - {"type":"vmess","name":"唯一服务器中国香港🇨🇳🇭🇰","http-opts":{"path":["/"]},"server":"45.152.64.220","port":"2063","uuid":"ab24e89b-ef46-45be-9fdd-2510ec422607","alterId":"0","cipher":"chacha20-poly1305","network":"http"}
+  - {"type":"vmess","name":"🇨🇳🇭🇰中国香港Avmess","http-opts":{"path":["/"]},"server":"45.152.64.220","port":"2063","uuid":"ab24e89b-ef46-45be-9fdd-2510ec422607","alterId":"0","cipher":"chacha20-poly1305","network":"http"}
   - {"name":"可能不稳定，建议自行购买","type":"vmess","server":"198.2.206.34","port":33012,"cipher":"auto","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":64,"tls":false,"skip-cert-verify":true,"servername":"","network":"tcp"}
+  - {"name":"🇨🇳🇭🇰中国香港Ass","type":"ss","server":"45.152.64.220","port":3471,"password":"114514","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: 83寄
     type: select
     proxies:
-      - 自动选择？就一个莫得选择
+      - 自动选择？反正都是一个网
       - DIRECT
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
-  - name: 自动选择？就一个莫得选择
+  - name: 帮助:电报@awamuruo
+    type: select
+    proxies:
+      - DIRECT
+  - name: 自动选择？反正都是一个网
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 唯一服务器中国香港🇨🇳🇭🇰
-      - 可能不稳定，建议自行购买
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
   - name: 国外媒体？全是勾罕见
     type: select
     proxies:
       - 83寄
-      - 自动选择？就一个莫得选择
+      - 自动选择？反正都是一个网
       - 直连喵
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
   - name: 电报，感觉不如社交媒体
     type: select
     proxies:
       - 83寄
       - 直连喵
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
   - name: 巨硬服务，您可能是正版软件的受害者
     type: select
     proxies:
       - 直连喵
       - 83寄
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
   - name: 苹果服务，厨子看了都说好
     type: select
     proxies:
       - 83寄
       - 直连喵
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
   - name: 直连喵
     type: select
     proxies:
       - DIRECT
       - 83寄
-      - 自动选择？就一个莫得选择
+      - 自动选择？反正都是一个网
   - name: 拦截，忽略！
     type: select
     proxies:
@@ -85,8 +96,9 @@ proxy-groups:
     proxies:
       - 83寄
       - 直连喵
-      - 自动选择？就一个莫得选择
-      - 唯一服务器中国香港🇨🇳🇭🇰
+      - 自动选择？反正都是一个网
+      - 🇨🇳🇭🇰中国香港Avmess
+      - 🇨🇳🇭🇰中国香港Ass
       - 可能不稳定，建议自行购买
 
 rules:
