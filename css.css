@@ -2,7 +2,7 @@
 body {	margin: 0px; background-color: #2271ac;}
 td,input,button,select,body{font-family:"lucida Grande","Microsoft Yahei";}
 /*top*/
-.top{ width:auto;height:65px; margin:0 auto; background:url(https://muruoawa.github.io/muruo-website/red.gif);}
+.top{ width:auto;height:65px; margin:0 auto; background:url(../images/top_bg.gif);}
 .top_a{ width:974px; height:68px; margin:auto;}
 .top_a_sv{width:60px;height:38px;float:right;text-align:left font-size:12px; font-weight: bold;color:#333333; line-height:30px;}
 /*文轩对接把背景图片去掉*/
@@ -64,7 +64,7 @@ li a {color: #ffffff;text-decoration: none;}
 .deng_rm{float: left;}
 
  /*center*/
-.center_wu{ width:auto; margin:0 auto;background:url(../images/ji_01.gif);}
+.center_wu{ width:auto; margin:0 auto;background:url(https://muruoawa.github.io/muruo-website/red.gif);}
 .center{width:974px;height:auto; margin:0 auto;}
 .center_a{width:800px;height:550px;background-color:#F4F5F7;margin-left:175px;}
 .center_a_service{width:800px;height:550px;background-color:#F4F5F7;}
