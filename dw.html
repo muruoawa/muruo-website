@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>启动！</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    video {
+        width: 80%;
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<h1>启动！</h1>
+<video id="randomVideo" controls autoplay>
+    <source src="" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<button id="randomButton">更换视频</button>
+
+<audio id="randomAudio" autoplay style="display:none;">
+    <source src="yy.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+</audio>
+
+<script>
+    const videos = [
+        "v1.mp4",
+        "v2.mp4",
+        "v4.mp4",
+        "v3.mp4"
+        // Add more video URLs here
+    ];
+
+    function playRandomVideo() {
+        const randomVideoIndex = Math.floor(Math.random() * videos.length);
+        const randomVideo = videos[randomVideoIndex];
+        document.getElementById("randomVideo").src = randomVideo;
+    }
+
+    document.getElementById("randomButton").addEventListener("click", playRandomVideo);
+
+    // Play a random video when the page loads
+    window.onload = function() {
+        playRandomVideo();
+        document.getElementById("randomAudio").play();
+    };
+</script>
+</body>
+</html>
