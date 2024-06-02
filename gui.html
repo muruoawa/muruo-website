@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <title>龟专用</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <style>
+    #ggb-element {
+      width:100%; 
+      height: auto; 
+      aspect-ratio: 9 / 16;
+    }
+  </style>
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+  <!-- Coze 聊天应用的脚本 -->
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
+</head>
+<body>
+  <div id="ggb-element"></div>
+  
+  <script>
+    var params = {
+      "appName": "graphing",
+      "width": window.innerWidth,
+      "height": window.innerWidth * 16/9,
+      "showToolBar": true,
+      "showAlgebraInput": true,
+      "showMenuBar": true
+    };
+    var applet = new GGBApplet(params, true);
+    window.addEventListener("load", function() {
+      applet.inject('ggb-element');
+    });
+  </script>
+  
+  <!-- 配置和启动 Coze 聊天应用 -->
+  <script>
+      new CozeWebSDK.WebChatClient({
+        config: {
+          bot_id: '7375890781141254152',
+        },
+        componentProps: {
+          title: '桂菊GPT',
+          icon:'gui.png'
+        },
+      });
+  </script>
+</body>
+</html>
