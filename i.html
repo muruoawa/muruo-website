@@ -22,7 +22,7 @@
         a:hover {
             text-decoration: underline;
         }
-        iframe {
+        iframe, video, audio {
             margin-top: 20px;
             width: 100%;
             max-width: 560px;
@@ -31,8 +31,14 @@
 </head>
 <body>
 
+<!-- Baidu Search Form -->
+<form action="https://www.baidu.com/s" method="get" target="_blank">
+    <input type="text" name="wd" placeholder="百度一下" style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="submit" value="搜索" style="padding: 10px; font-size: 16px; cursor: pointer;">
+</form>
+
 <a href="https://www.douyin.com/?is_from_mobile_home=1&recommend=1">抖音</a>
-<a href="https://www.xiaohongshu.com/explore">小红书</a>
+<a href="https://www.xiaohongshu.com/explore">小红书（不可用</a>
 <a href="https://www.geogebra.org/graphing">图形计算器</a>
 <a href="https://m.bilibili.com/">哔哩哔哩</a>
 <a href="https://ys.mihoyo.com/cloud/">云原神</a>
@@ -41,9 +47,22 @@
 <a href="http://www.bjbus.com/api/index.php#/ ">北京公交</a>
 <a href="https://cg.163.com/">网易云游戏</a>
 <a href="https://www.migufun.com/middleh5/">咪咕快游</a>
-<a href="https://y.music.163.com/">网易云音乐（不可用</a>
-<a href="https://y.qq.com/">QQ音乐（不可用</a>
+<a href="https://y.music.163.com/">网易云音乐（不可用）</a>
+<a href="https://y.qq.com/">QQ音乐（不可用）</a>
 <a href="https://www.miguvideo.com/">咪咕视频</a>
 <a href="https://ac.qq.com/">腾讯动漫</a>
+
+<!-- Video Player -->
+<video controls>
+    <source src="https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8" type="application/x-mpegURL">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Audio Player -->
+<audio controls>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+
 </body>
 </html>
