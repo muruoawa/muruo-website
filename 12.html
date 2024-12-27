@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背诵</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .hidden-answer {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            background-color: black;
+            cursor: pointer;
+            padding: 0 5px;
+            white-space: pre-wrap; /* 保持换行 */
+        }
+        .hidden-answer.revealed {
+            color: green;
+            background-color: transparent;
+        }
+        #text-container {
+            font-size: 1.2em;
+            white-space: pre-wrap; /* 保持原文换行 */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>背诵</h1>
+    <button onclick="revealAllAnswers()">显示全部答案</button>
+
+    <div id="text-container"></div>
+
+    <script>
+        // 自动加载同目录下的12.txt文件
+        fetch('12.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`无法加载文件: ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(content => {
+                displayContent(content);
+            })
+            .catch(error => {
+                document.getElementById('text-container').innerText = `文件加载失败: ${error.message}`;
+            });
+
+        function displayContent(content) {
+            const container = document.getElementById('text-container');
+            container.innerHTML = ''; // 清空内容
+            const lines = content.split('\n'); // 按行分割
+
+            lines.forEach(line => {
+                const processedLine = line.replace(/（[^）]*）/g, match => {
+                    return `<span class="hidden-answer" onclick="revealAnswer(this)">${match}</span>`;
+                });
+                container.innerHTML += `${processedLine}<br>`;
+            });
+        }
+
+        function revealAnswer(element) {
+            element.classList.add('revealed');
+            element.innerHTML = element.innerHTML.replace('（', '').replace('）', ''); // 去掉括号
+        }
+
+        function revealAllAnswers() {
+            const hiddenAnswers = document.querySelectorAll('.hidden-answer');
+            hiddenAnswers.forEach(function(answer) {
+                answer.classList.add('revealed');
+                answer.innerHTML = answer.innerHTML.replace('（', '').replace('）', ''); // 去掉括号
+            });
+        }
+    </script>
+
+</body>
+</html>
